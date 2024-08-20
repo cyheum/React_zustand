@@ -1,14 +1,14 @@
-const path = require('path')
-const webpack = require('webpack')
-const Dotenv = require('dotenv-webpack')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ErrorOverlayPlugin = require('error-overlay-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const path = require('path');
+const webpack = require('webpack');
+const Dotenv = require('dotenv-webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-const isDevelopment = process.env.NODE_ENV !== 'production'
+const isDevelopment = process.env.NODE_ENV !== 'production';
 
 const config = {
-  name: 'React_Redux_Plate', // 설정 이름
+  name: 'React_zustand 1.0', // 설정 이름
   mode: isDevelopment ? 'development' : 'production', // production, development // 설정 모드
   devtool: false,
   entry: {
@@ -94,10 +94,10 @@ const config = {
     open: true,
     historyApiFallback: true,
   },
-}
+};
 
 if (isDevelopment && config.plugins) {
-  config.plugins.push(new webpack.HotModuleReplacementPlugin())
+  config.plugins.push(new webpack.HotModuleReplacementPlugin());
 }
 
-module.exports = config
+module.exports = config;
