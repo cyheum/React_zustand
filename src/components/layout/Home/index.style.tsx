@@ -6,3 +6,9 @@ export const Container = styled.section`
   @media (max-width: 1024px) {
   }
 `;
+
+export const Image = styled.img`
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+`;

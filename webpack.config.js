@@ -4,6 +4,7 @@ const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ErrorOverlayPlugin = require('error-overlay-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
@@ -79,6 +80,14 @@ const config = {
       // 리액트 자동 로드
       React: 'react',
     }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: 'public/images', // 🔥 public 내부의 images 폴더만 복사
+          to: 'images', // 🔥 dist/images 폴더로 바로 복사
+        },
+      ],
+    }),
   ],
   output: {
     publicPath: '/',
@@ -88,7 +97,7 @@ const config = {
   devServer: {
     // 개발 서버 설정
     static: './public',
-    port: 3000,
+    port: 4000,
     hot: true, // 핫 모듈 교체(HMR) 활성화
     compress: true,
     open: true,

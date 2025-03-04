@@ -12,6 +12,7 @@ class Router extends Component {
         <GlobalStyle />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/home" element={<HomePage />} />
         </Routes>
       </BrowserRouter>
     );

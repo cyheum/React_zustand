@@ -5,7 +5,7 @@
   "main": "index.tsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack serve --env development",
+    "dev": "node start.ts",
     "build": "NODE_ENV=production webpack",
     "start": "npx serve -s dist"
   },
@@ -14,11 +14,11 @@
   "dependencies": {
     "@sentry/react": "^8.26.0",
     "axios": "^1.4.0",
+    "detect-port": "^2.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.1.2",
     "react-router-dom": "^6.14.2",
-    "redux": "^4.2.1",
     "styled-components": "^6.1.12",
     "typescript": "^5.1.6"
   },
@@ -28,7 +28,6 @@
     "@babel/preset-env": "^7.22.9",
     "@babel/preset-react": "^7.22.5",
     "@babel/preset-typescript": "^7.22.5",
-    "@reduxjs/toolkit": "^1.9.5",
     "@svgr/webpack": "^8.0.1",
     "@testing-library/jest-dom": "^5.17.0",
     "@types/babel__core": "^7",
@@ -39,7 +38,6 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/react-router-dom": "^5.3.3",
-    "@types/redux-logger": "^3",
     "@types/styled-components": "^5.1.26",
     "@types/testing-library__jest-dom": "^5",
     "@types/uuid": "^10.0.0",
@@ -48,6 +46,7 @@
     "@yarnpkg/sdks": "^3.0.0-rc.48",
     "babel-loader": "^9.1.3",
     "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^13.0.0",
     "cross-env": "^7.0.3",
     "crypto-js": "^4.2.0",
     "css-loader": "^6.8.1",
@@ -70,14 +69,12 @@
     "react-router": "^6.8.1",
     "react-spring": "^9.6.1",
     "redux-devtools-extension": "^2.13.9",
-    "redux-logger": "^3.0.6",
-    "redux-saga": "^1.2.3",
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",
     "styled-reset": "^4.5.1",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1",
-    "zustand": "^4.5.5"
+    "zustand": "^5.0.3"
   }
 }
